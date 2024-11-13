@@ -1,11 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/wrm   # L'URL de la base de données
+    url: jdbc:postgresql://localhost:5433/wrm   # L'URL de la base de donnees
     username: postgres     # Le nom d'utilisateur
-    password: 0000        # Le mot de passe
+    password: 0000         # Le mot de passe
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create   # Mise à jour automatique de la base de données (ou 'none' pour pas de mise à jour)
+      ddl-auto: create     # Mise a jour automatique de la base de donnees (ou 'none' pour pas de mise a jour)
     database-platform: org.hibernate.dialect.PostgreSQLDialect  # Le dialecte PostgreSQL pour Hibernate
-

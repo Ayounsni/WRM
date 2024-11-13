@@ -130,6 +130,15 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
             <!-- Plugin Spring Boot (ne pas oublier d'exclure Lombok si nécessaire) -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
