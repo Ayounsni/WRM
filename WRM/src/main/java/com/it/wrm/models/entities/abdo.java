@@ -1,23 +1,23 @@
 package com.it.wrm.models.entities;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.validation.constraints.NotBlank;
-import lombok.*;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
-@Table(name = "teams")
+@Table(name = "abdos")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Team implements Serializable {
+public class abdo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

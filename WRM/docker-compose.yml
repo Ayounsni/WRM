@@ -1,18 +1,19 @@
-version: '3.8'
 services:
-  db:
-    image: postgres:13
-    container_name: postgres-container
+  postgres:
+    image: 'postgres:latest'
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 0000
-      POSTGRES_DB: wrm
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_DB=wrm'
+      - 'POSTGRES_PASSWORD=admin'
     ports:
-      - "5433:5433"
-    command: [ "postgres", "-p", "5433" ]
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - '5431:5431'
+    command: [ "postgres", "-p", "5431" ]
 
-volumes:
-  postgres-data:
-    driver: local
+  pgadmin:
+    image: 'dpage/pgadmin4:latest'
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ayoubsnini@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 5050
+    ports:
+      - '5050:5050'
