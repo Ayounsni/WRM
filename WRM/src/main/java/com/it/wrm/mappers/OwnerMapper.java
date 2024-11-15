@@ -1,4 +1,4 @@
-package com.it.itlens.models.mappers;
+package com.it.wrm.mappers;
 
 import com.it.itlens.models.dtos.Owner.CreateOwnerDTO;
 import com.it.itlens.models.dtos.Owner.ResponseOwnerDTO;

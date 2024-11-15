@@ -1,34 +1,25 @@
-package com.it.wrm.models.entities;
+package com.it.wrm.models.dtos.Visit;
 
 import com.it.wrm.models.embeddableId.VisitId;
 import com.it.wrm.models.enums.Status;
-import jakarta.persistence.*;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Duration;
 import java.time.LocalTime;
 
-@Entity
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class
-Visit {
-
-    @EmbeddedId
-    private VisitId id;
-
-    @ManyToOne
-    @MapsId("visitorId")
-    private Visitor visitor;
-
-    @ManyToOne
-    @MapsId("waitingListId")
-    private WaitingList waitingList;
+public class CreateVisitDTO {
+    @NotNull
+    private EmbeddableIdVisitDTO id;
 
     @NotNull
     private LocalTime arrivalTime;
@@ -38,14 +29,11 @@ Visit {
     private LocalTime endTime;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
-    private Status status = Status.PENDING;
+    private Status status;
 
     @Min(0)
     @Max(255)
     private byte priority;
 
-    private Duration ept; // EPT (Estimation du temps de travail)
-
-
+    private Duration ept;
 }

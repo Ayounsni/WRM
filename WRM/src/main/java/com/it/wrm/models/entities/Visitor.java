@@ -25,7 +25,6 @@ public class Visitor {
     private String lastName;
 
     @OneToMany(mappedBy = "visitor",cascade = CascadeType.REMOVE,  fetch = FetchType.EAGER)
-
     private List<Visit> visits ;
 
 

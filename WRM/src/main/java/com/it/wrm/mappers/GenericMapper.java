@@ -1,4 +1,4 @@
-package com.it.itlens.models.mappers;
+package com.it.wrm.mappers;
 
 import org.mapstruct.MappingTarget;
 import java.util.List;

@@ -33,7 +33,6 @@ public class WaitingList {
     private Mode mode;
 
     @OneToMany(mappedBy = "waitingList",cascade = CascadeType.REMOVE,  fetch = FetchType.EAGER)
-
     private List<Visit> visits ;
 
 
