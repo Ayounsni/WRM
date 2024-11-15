@@ -1,8 +1,7 @@
-package com.it.itlens.services.interfaces;
+package com.it.wrm.services.interfaces;
 
-import com.it.itlens.models.dtos.Pagination.PageDTO;
+import com.it.wrm.models.dtos.Pagination.PageDTO;
 
-import java.util.List;
 
 public interface IGenericService<CreateDTO, UpdateDTO, ResponseDTO> {
     ResponseDTO create(CreateDTO createDTO);

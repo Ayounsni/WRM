@@ -1,8 +1,9 @@
-package com.it.itlens.services.implementation;
+package com.it.wrm.services.implementation;
 
-import com.it.itlens.models.dtos.Pagination.PageDTO;
-import com.it.itlens.models.mappers.GenericMapper;
-import com.it.itlens.services.interfaces.IGenericService;
+
+import com.it.wrm.services.interfaces.IGenericService;
+import com.it.wrm.mappers.GenericMapper;
+import com.it.wrm.models.dtos.Pagination.PageDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
