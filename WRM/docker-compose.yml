@@ -1,13 +1,25 @@
 services:
-  postgres:
+  postgres-dev:
     image: 'postgres:latest'
+    container_name: postgres-dev
     environment:
       - 'POSTGRES_USER=postgres'
       - 'POSTGRES_DB=wrm'
       - 'POSTGRES_PASSWORD=admin'
     ports:
-      - '5431:5431'
+      - '5431:5431' # Dev utilise le port 5431
     command: [ "postgres", "-p", "5431" ]
+
+  postgres-prod:
+    image: 'postgres:latest'
+    container_name: postgres-prod
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_DB=wrm_prod'
+      - 'POSTGRES_PASSWORD=admin'
+    ports:
+      - '5430:5430' # Prod utilise le port 5432
+    command: [ "postgres", "-p", "5430" ]
 
   pgadmin:
     image: 'dpage/pgadmin4:latest'

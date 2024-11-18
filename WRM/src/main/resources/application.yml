@@ -1,26 +1,9 @@
 spring:
   application:
     name: WRM
-
   jpa:
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
-
-  datasource:
-    url: jdbc:postgresql://localhost:5431/wrm
-    username: postgres
-    password: admin
-
-  show-sql: true
-  properties:
-    hibernate:
-      format_sql: true
-
-
-  app:
-    default:
-      capacity: 2
-      algorithm-type: "FIFO"
-
-
+    properties:
+      hibernate:
+        format_sql: true
+  profiles:
+    active: prod

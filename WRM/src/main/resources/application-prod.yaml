@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5430/wrm_prod
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  app:
+    default:
+      capacity: 5
+      algorithm-type: "FIFO"
+
+  logging:
+    level:
+      root: WARN
