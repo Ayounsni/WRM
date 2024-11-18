@@ -16,3 +16,11 @@ spring:
   properties:
     hibernate:
       format_sql: true
+
+
+  app:
+    default:
+      capacity: 2
+      algorithm-type: "FIFO"
+
+

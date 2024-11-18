@@ -16,10 +16,8 @@ public class CreateWaitingListDTO {
     @NotNull
     private LocalDate date;
 
-    @NotNull
     private String algorithmType;
 
-    @NotNull
     private Integer capacity;
 
     @Enumerated(EnumType.STRING)

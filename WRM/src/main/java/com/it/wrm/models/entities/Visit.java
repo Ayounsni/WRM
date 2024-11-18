@@ -38,12 +38,11 @@ Visit {
     private LocalTime endTime;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
-    private Status status = Status.PENDING;
+    private Status status ;
 
     @Min(0)
     @Max(255)
-    private byte priority;
+    private int priority;
 
     private Duration ept; // EPT (Estimation du temps de travail)
 

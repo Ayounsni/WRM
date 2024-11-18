@@ -17,8 +17,6 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UpdateVisitDTO {
-    @NotNull
-    private EmbeddableIdVisitDTO id;
 
     private LocalTime arrivalTime;
 
@@ -31,7 +29,7 @@ public class UpdateVisitDTO {
 
     @Min(0)
     @Max(255)
-    private byte priority;
+    private int priority;
 
     private Duration ept;
 }

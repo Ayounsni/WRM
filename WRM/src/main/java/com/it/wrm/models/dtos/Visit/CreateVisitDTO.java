@@ -1,6 +1,5 @@
 package com.it.wrm.models.dtos.Visit;
 
-import com.it.wrm.models.embeddableId.VisitId;
 import com.it.wrm.models.enums.Status;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -33,7 +32,7 @@ public class CreateVisitDTO {
 
     @Min(0)
     @Max(255)
-    private byte priority;
+    private int priority;
 
     private Duration ept;
 }
