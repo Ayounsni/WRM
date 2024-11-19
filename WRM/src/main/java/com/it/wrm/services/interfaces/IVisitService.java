@@ -19,4 +19,6 @@ public interface IVisitService {
     void deleteVisitById(Long visitorId, Long waitingListId);
     ResponseVisitDTO updateVisit(Long visitorId, Long waitingListId, UpdateVisitDTO updateVisitDTO);
     List<ResponseVisitDTO> findAllByWaitingList(Long waitingListId);
+    double calculateAverageWaitingTimeForWaitingList(Long waitingListId);
+    double calculateAverageWaitingTimeForAll();
 }

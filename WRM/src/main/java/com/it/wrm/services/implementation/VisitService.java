@@ -22,6 +22,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Duration;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -132,6 +133,26 @@ public class VisitService implements IVisitService {
         visitMapper.updateEntityFromDTO(updateVisitDTO, visit);
         Visit updatedVisit = visitRepository.save(visit);
         return visitMapper.toDTO(updatedVisit);
+    }
+    @Override
+    public double calculateAverageWaitingTimeForWaitingList(Long waitingListId) {
+        List<Visit> visits = visitRepository.findByWaitingList_Id(waitingListId);
+
+        return visits.stream()
+                .filter(visit -> visit.getArrivalTime() != null && visit.getStartTime() != null)
+                .mapToLong(visit -> Duration.between(visit.getArrivalTime(), visit.getStartTime()).toSeconds())
+                .average()
+                .orElse(0);
+    }
+    @Override
+    public double calculateAverageWaitingTimeForAll() {
+        List<Visit> visits = visitRepository.findAll();
+
+        return visits.stream()
+                .filter(visit -> visit.getArrivalTime() != null && visit.getStartTime() != null)
+                .mapToLong(visit -> Duration.between(visit.getArrivalTime(), visit.getStartTime()).toSeconds())
+                .average()
+                .orElse(0);
     }
 
 

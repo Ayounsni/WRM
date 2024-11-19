@@ -6,11 +6,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-  app:
-    default:
-      capacity: 5
-      algorithm-type: "FIFO"
-
   logging:
     level:
       root: WARN

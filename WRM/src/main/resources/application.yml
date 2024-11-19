@@ -5,5 +5,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  app:
+    default:
+      capacity: 3
+      algorithm-type: "FIFO"
   profiles:
-    active: prod
+    active: dev
+
